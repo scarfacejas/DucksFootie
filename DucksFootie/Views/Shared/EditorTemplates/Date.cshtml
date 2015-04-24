@@ -1,0 +1,13 @@
+﻿@model DateTime
+from date editor
+@Html.TextBox(string.Empty, string.Format("0:dd MMM yyyy", Model), new { @class = "datefield", type =  "date"})
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".datefield").datepicker();
+        });
+    </script>
+}

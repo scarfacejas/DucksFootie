@@ -1,0 +1,26 @@
+﻿@model DucksFootie.Entities.Game
+
+@{
+    ViewBag.Title = "Detail";
+}
+
+<h2>Detail</h2>
+
+<fieldset>
+    <legend>Game</legend>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Date)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Date)
+    </div>
+
+    <section id="players">
+        @Html.Action("ShowPlayers", Model.Players)
+    </section>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Date }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

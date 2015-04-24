@@ -1,0 +1,5 @@
+C:\Users\jason.smith\Documents\Personal\Dev\DucksFootie\DucksFootie.Entities\bin\Debug\DucksFootie.Entities.dll
+C:\Users\jason.smith\Documents\Personal\Dev\DucksFootie\DucksFootie.Entities\bin\Debug\DucksFootie.Entities.pdb
+C:\Users\jason.smith\Documents\Personal\Dev\DucksFootie\DucksFootie.Entities\obj\Debug\DucksFootie.Entities.csprojResolveAssemblyReference.cache
+C:\Users\jason.smith\Documents\Personal\Dev\DucksFootie\DucksFootie.Entities\obj\Debug\DucksFootie.Entities.dll
+C:\Users\jason.smith\Documents\Personal\Dev\DucksFootie\DucksFootie.Entities\obj\Debug\DucksFootie.Entities.pdb
