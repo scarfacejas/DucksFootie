@@ -6,7 +6,6 @@ using Common.Interfaces;
 using DucksFootie.DataAccess;
 using DucksFootie.Entities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Moq;
 
 namespace DucksFootie.Tests
 {
@@ -91,7 +90,7 @@ namespace DucksFootie.Tests
             Player player1 = Helper.CreatePlayer(1);
             Player player2 = Helper.CreatePlayer(2);
             Player player3 = Helper.CreatePlayer(3);
-            
+
             var da = new PlayerAccess(_savablePlayers);
 
             da.Add(player1);
@@ -101,12 +100,12 @@ namespace DucksFootie.Tests
             da.Remove(player2);
 
             Assert.AreEqual(2, da.GetAll().Count());
-            Assert.IsFalse(da.GetAll().Any( p => p.UserId == 2));
+            Assert.IsFalse(da.GetAll().Any(p => p.UserId == 2));
             Assert.IsNull(da.Get(2));
         }
 
         [TestMethod]
-        public void AddPlayer_should_add_plaer()
+        public void AddPlayer_should_add_player()
         {
             Player player = Helper.CreatePlayer(45);
 

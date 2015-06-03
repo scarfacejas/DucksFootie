@@ -1,0 +1,4 @@
+C:\Users\jason.smith\Documents\Personal\Dev\DucksFootie\DucksFootie.Entities\bin\Release\DucksFootie.Entities.dll
+C:\Users\jason.smith\Documents\Personal\Dev\DucksFootie\DucksFootie.Entities\bin\Release\DucksFootie.Entities.pdb
+C:\Users\jason.smith\Documents\Personal\Dev\DucksFootie\DucksFootie.Entities\obj\Release\DucksFootie.Entities.dll
+C:\Users\jason.smith\Documents\Personal\Dev\DucksFootie\DucksFootie.Entities\obj\Release\DucksFootie.Entities.pdb

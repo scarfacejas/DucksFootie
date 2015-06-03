@@ -1,10 +1,14 @@
 C:\Users\jason.smith\Documents\Personal\Dev\DucksFootie\DucksFootie.Tests\bin\Debug\DucksFootie.Tests.dll.config
 C:\Users\jason.smith\Documents\Personal\Dev\DucksFootie\DucksFootie.Tests\bin\Debug\DucksFootie.Tests.dll
 C:\Users\jason.smith\Documents\Personal\Dev\DucksFootie\DucksFootie.Tests\bin\Debug\DucksFootie.Tests.pdb
+C:\Users\jason.smith\Documents\Personal\Dev\DucksFootie\DucksFootie.Tests\bin\Debug\Common.dll
+C:\Users\jason.smith\Documents\Personal\Dev\DucksFootie\DucksFootie.Tests\bin\Debug\DucksFootie.DataAccess.dll
+C:\Users\jason.smith\Documents\Personal\Dev\DucksFootie\DucksFootie.Tests\bin\Debug\DucksFootie.Entities.dll
 C:\Users\jason.smith\Documents\Personal\Dev\DucksFootie\DucksFootie.Tests\bin\Debug\Microsoft.Data.Edm.dll
 C:\Users\jason.smith\Documents\Personal\Dev\DucksFootie\DucksFootie.Tests\bin\Debug\Microsoft.Data.OData.dll
 C:\Users\jason.smith\Documents\Personal\Dev\DucksFootie\DucksFootie.Tests\bin\Debug\Microsoft.Web.Infrastructure.dll
 C:\Users\jason.smith\Documents\Personal\Dev\DucksFootie\DucksFootie.Tests\bin\Debug\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\jason.smith\Documents\Personal\Dev\DucksFootie\DucksFootie.Tests\bin\Debug\Moq.dll
 C:\Users\jason.smith\Documents\Personal\Dev\DucksFootie\DucksFootie.Tests\bin\Debug\Newtonsoft.Json.dll
 C:\Users\jason.smith\Documents\Personal\Dev\DucksFootie\DucksFootie.Tests\bin\Debug\System.Spatial.dll
 C:\Users\jason.smith\Documents\Personal\Dev\DucksFootie\DucksFootie.Tests\bin\Debug\System.Web.Helpers.dll
@@ -14,6 +18,10 @@ C:\Users\jason.smith\Documents\Personal\Dev\DucksFootie\DucksFootie.Tests\bin\De
 C:\Users\jason.smith\Documents\Personal\Dev\DucksFootie\DucksFootie.Tests\bin\Debug\System.Web.WebPages.Deployment.dll
 C:\Users\jason.smith\Documents\Personal\Dev\DucksFootie\DucksFootie.Tests\bin\Debug\System.Web.WebPages.dll
 C:\Users\jason.smith\Documents\Personal\Dev\DucksFootie\DucksFootie.Tests\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\jason.smith\Documents\Personal\Dev\DucksFootie\DucksFootie.Tests\bin\Debug\Common.pdb
+C:\Users\jason.smith\Documents\Personal\Dev\DucksFootie\DucksFootie.Tests\bin\Debug\DucksFootie.DataAccess.pdb
+C:\Users\jason.smith\Documents\Personal\Dev\DucksFootie\DucksFootie.Tests\bin\Debug\DucksFootie.Entities.pdb
+C:\Users\jason.smith\Documents\Personal\Dev\DucksFootie\DucksFootie.Tests\bin\Debug\Moq.xml
 C:\Users\jason.smith\Documents\Personal\Dev\DucksFootie\DucksFootie.Tests\bin\Debug\Newtonsoft.Json.xml
 C:\Users\jason.smith\Documents\Personal\Dev\DucksFootie\DucksFootie.Tests\bin\Debug\System.Web.Helpers.xml
 C:\Users\jason.smith\Documents\Personal\Dev\DucksFootie\DucksFootie.Tests\bin\Debug\System.Web.Mvc.xml
@@ -55,11 +63,3 @@ C:\Users\jason.smith\Documents\Personal\Dev\DucksFootie\DucksFootie.Tests\bin\De
 C:\Users\jason.smith\Documents\Personal\Dev\DucksFootie\DucksFootie.Tests\obj\Debug\DucksFootie.Tests.csprojResolveAssemblyReference.cache
 C:\Users\jason.smith\Documents\Personal\Dev\DucksFootie\DucksFootie.Tests\obj\Debug\DucksFootie.Tests.dll
 C:\Users\jason.smith\Documents\Personal\Dev\DucksFootie\DucksFootie.Tests\obj\Debug\DucksFootie.Tests.pdb
-C:\Users\jason.smith\Documents\Personal\Dev\DucksFootie\DucksFootie.Tests\bin\Debug\DucksFootie.DataAccess.dll
-C:\Users\jason.smith\Documents\Personal\Dev\DucksFootie\DucksFootie.Tests\bin\Debug\DucksFootie.Entities.dll
-C:\Users\jason.smith\Documents\Personal\Dev\DucksFootie\DucksFootie.Tests\bin\Debug\DucksFootie.DataAccess.pdb
-C:\Users\jason.smith\Documents\Personal\Dev\DucksFootie\DucksFootie.Tests\bin\Debug\DucksFootie.Entities.pdb
-C:\Users\jason.smith\Documents\Personal\Dev\DucksFootie\DucksFootie.Tests\bin\Debug\Common.dll
-C:\Users\jason.smith\Documents\Personal\Dev\DucksFootie\DucksFootie.Tests\bin\Debug\Moq.dll
-C:\Users\jason.smith\Documents\Personal\Dev\DucksFootie\DucksFootie.Tests\bin\Debug\Common.pdb
-C:\Users\jason.smith\Documents\Personal\Dev\DucksFootie\DucksFootie.Tests\bin\Debug\Moq.xml

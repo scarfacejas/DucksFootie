@@ -1,0 +1,22 @@
+﻿<div ng-app="playerModule">
+    @{
+        ViewBag.Title = "Player Management";
+    }
+    <h2>Player Management</h2>
+    <div ng-controller="playerController">
+        <ul>
+            <input type="hidden" id="hidUserId" ng-model="UserId"/>
+            <li><b>ID:&nbsp;</b>{{item.UserId}}</li>
+            <li><b>Name:&nbsp;</b><input type="text" id="txtName" ng-model="Name" /></li>
+            <li><b>Email:&nbsp;</b><input type="text" id="txtEmail" ng-model="Email" /></li>
+            <li><input type="button" id="btnSave" value="Save" ng-click="save()"/></li>
+        </ul>
+        <ul>
+            <li ng-repeat="item in players">{{item.UserId}}, {{item.Name}}, {{item.Email}}</li>
+        </ul>
+    </div>
+</div>
+<script src="~/Scripts/angular.js"></script>
+<script src="~/Scripts/AngularJS/PlayerModule.js"></script>
+<script src="~/Scripts/AngularJS/PlayerService.js"></script>
+<script src="~/Scripts/AngularJS/PlayerController.js"></script>

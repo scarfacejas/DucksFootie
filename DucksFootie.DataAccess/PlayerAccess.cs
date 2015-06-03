@@ -7,6 +7,8 @@ namespace DucksFootie.DataAccess
 {
     public class PlayerAccess
     {
+        private static int _newPlayerId = -1;
+        private static readonly object _lockObject = new object();
         private List<Player> _players = null;
         private ISavable<List<Player>> Savable { get; set; }
 
@@ -14,6 +16,18 @@ namespace DucksFootie.DataAccess
         {
             Savable = savable;
             _players = Savable.Read() ?? new List<Player>();
+
+            if (_newPlayerId != -1) return;
+
+            lock (_lockObject)
+                if (_newPlayerId == -1)
+                    _newPlayerId = _players.Any() ? _players.Max(p => p.UserId) : 0;
+        }
+
+        public int GetNewPlayerId()
+        {
+            lock (_lockObject)
+                return ++_newPlayerId;
         }
 
         public void Add(Player player)
@@ -42,7 +56,7 @@ namespace DucksFootie.DataAccess
 
         public IEnumerable<Player> GetAll()
         {
-            return _players;
+            return _players.Where(p => p.Active);
         }
 
         //public static IEnumerable<GamePlayer> GetAllGamePlayers()

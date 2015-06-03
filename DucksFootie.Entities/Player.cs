@@ -1,16 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 
 namespace DucksFootie.Entities
 {
     [Serializable]
+    [DataContract]
     public class Player : IEqualityComparer<Player>, IEquatable<Player>
     {
+        public Player()
+        {
+            Active = true;
+        }
+
+        [DataMember]
         public int UserId { get; set; }
+        [DataMember]
         public string Name { get; set; }
+        [DataMember]
         public string Email { get; set; }
+        [DataMember]
+        public bool Active { get; set; }
 
         public override bool Equals(object obj)
         {

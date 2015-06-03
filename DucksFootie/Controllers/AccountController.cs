@@ -5,8 +5,8 @@ using System.Transactions;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using Common.Interfaces;
 using DotNetOpenAuth.AspNet;
-using DucksFootie.DataAccess;
 using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
 using DucksFootie.Filters;
@@ -21,8 +21,14 @@ namespace DucksFootie.Controllers
     [InitializeSimpleMembership]
     public class AccountController : Controller
     {
-        private readonly static SaveToFile<List<Player>> _savable =
-            new SaveToFile<List<Player>>(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), System.Diagnostics.Process.GetCurrentProcess().ProcessName, "players.dft"));
+        private ISavable<List<Player>> SavablePlayer { get; set; }
+        private DucksFootie.DataAccess.PlayerAccess PlayerAccess { get; set; }
+
+        public AccountController(ISavable<List<Player>> savablePlayer)
+        {
+            SavablePlayer = savablePlayer;
+            PlayerAccess = new DucksFootie.DataAccess.PlayerAccess(SavablePlayer);
+        }
 
         protected override void OnResultExecuted(ResultExecutedContext filterContext)
         {
@@ -48,8 +54,7 @@ namespace DucksFootie.Controllers
         {
             if (ModelState.IsValid && WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe))
             {
-                var da = new PlayerAccess(_savable);
-                ViewBag.Player = da.Get(WebSecurity.GetUserId(model.UserName));
+                ViewBag.Player = PlayerAccess.Get(WebSecurity.GetUserId(model.UserName));
                 return RedirectToLocal(returnUrl);
             }
 
@@ -130,7 +135,7 @@ namespace DucksFootie.Controllers
                     if (hasLocalAccount || OAuthWebSecurity.GetAccountsFromUserName(User.Identity.Name).Count > 1)
                     {
                         OAuthWebSecurity.DeleteAccount(provider, providerUserId);
-                        DataAccess.PlayerAccess.Remove(new Entities.Player { UserId = userId });
+                        PlayerAccess.Remove(new Entities.Player { UserId = userId });
                         ViewBag.Player = null;
                         scope.Complete();
                         message = ManageMessageId.RemoveLoginSuccess;
@@ -154,7 +159,7 @@ namespace DucksFootie.Controllers
             var userId = WebSecurity.GetUserId(User.Identity.Name);
             ViewBag.HasLocalPassword = OAuthWebSecurity.HasLocalAccount(userId);
             ViewBag.ReturnUrl = Url.Action("Manage");
-            ViewBag.Player = DataAccess.PlayerAccess.Get(userId);
+            ViewBag.Player = PlayerAccess.Get(userId);
             return View();
         }
 
@@ -173,10 +178,10 @@ namespace DucksFootie.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var player = DataAccess.PlayerAccess.Get(userId);
+                    var player = PlayerAccess.Get(userId);
                     player.Email = model.Email;
                     ViewBag.Player = player;
-                    DataAccess.PlayerAccess.Update(player);
+                    PlayerAccess.Update(player);
 
                     // ChangePassword will throw an exception rather than return false in certain failure scenarios.
                     bool changePasswordSucceeded;
@@ -259,7 +264,7 @@ namespace DucksFootie.Controllers
             {
                 // If the current user is logged in add the new account
                 OAuthWebSecurity.CreateOrUpdateAccount(result.Provider, result.ProviderUserId, User.Identity.Name);
-                ViewBag.Player = DataAccess.PlayerAccess.Get(WebSecurity.GetUserId(User.Identity.Name));
+                ViewBag.Player = PlayerAccess.Get(WebSecurity.GetUserId(User.Identity.Name));
                 return RedirectToLocal(returnUrl);
             }
             else
@@ -307,7 +312,7 @@ namespace DucksFootie.Controllers
                         var userId = WebSecurity.GetUserId(model.UserName);
                         var player = new Entities.Player { UserId = userId, Name = model.UserName };
 
-                        DataAccess.PlayerAccess.Add(player);
+                        PlayerAccess.Add(player);
                         ViewBag.Player = player;
 
                         return RedirectToLocal(returnUrl);
@@ -370,7 +375,7 @@ namespace DucksFootie.Controllers
                     Name = model.UserName,
                     Email = model.Email
                 };
-            DataAccess.PlayerAccess.Add(player);
+            PlayerAccess.Add(player);
             ViewBag.Player = player;
         }
 

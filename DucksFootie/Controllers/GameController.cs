@@ -8,14 +8,21 @@ using DucksFootie.DataAccess;
 using DucksFootie.Entities;
 using Common;
 using System.IO;
+using Common.Interfaces;
 
 namespace DucksFootie.Controllers
 {
     [Authorize]
     public class GameController : Controller
     {
-        private readonly static SaveToFile<List<Game>> _savable = 
-            new SaveToFile<List<Game>>(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), System.Diagnostics.Process.GetCurrentProcess().ProcessName, "games.dft"));
+        private ISavable<List<Game>> SavableGame { get; set; }
+        private ISavable<List<Player>> SavablePlayer { get; set; }
+
+        public GameController(ISavable<List<Game>> savableGame, ISavable<List<Player>> savablePlayer)
+        {
+            SavableGame = savableGame;
+            SavablePlayer = savablePlayer;
+        }
 
         protected override void Initialize(RequestContext requestContext)
         {
@@ -35,7 +42,7 @@ namespace DucksFootie.Controllers
 
         public ActionResult Details(DateTime date)
         {
-            var da = new GameAccess(_savable);
+            var da = new GameAccess(SavableGame);
             var game = da.Get(date);
 
             return View(game);
@@ -57,7 +64,7 @@ namespace DucksFootie.Controllers
         {
             try
             {
-                var da = new GameAccess(_savable);
+                var da = new GameAccess(SavableGame);
                 da.Save(game);
 
                 return RedirectToAction("Details", game.Date);
@@ -71,10 +78,11 @@ namespace DucksFootie.Controllers
         [ChildActionOnly]
         public ActionResult ShowPlayers(IEnumerable<GamePlayer> players)
         {
-            var da = new PlayerAccess(_savable);
+            var da = new PlayerAccess(SavablePlayer);
             var boundPlayer = players ?? da.GetAll();
 
-            return PartialView("../Player/_PlayersPartial", boundPlayer);
+            //return PartialView("../Player/_PlayersPartial", boundPlayer);
+            return PartialView("../Player/_Players", boundPlayer);
         }
 
         //

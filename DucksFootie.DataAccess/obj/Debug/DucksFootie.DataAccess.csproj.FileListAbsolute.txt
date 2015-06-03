@@ -1,9 +1,9 @@
 C:\Users\jason.smith\Documents\Personal\Dev\DucksFootie\DucksFootie.DataAccess\bin\Debug\DucksFootie.DataAccess.dll
 C:\Users\jason.smith\Documents\Personal\Dev\DucksFootie\DucksFootie.DataAccess\bin\Debug\DucksFootie.DataAccess.pdb
+C:\Users\jason.smith\Documents\Personal\Dev\DucksFootie\DucksFootie.DataAccess\bin\Debug\Common.dll
 C:\Users\jason.smith\Documents\Personal\Dev\DucksFootie\DucksFootie.DataAccess\bin\Debug\DucksFootie.Entities.dll
+C:\Users\jason.smith\Documents\Personal\Dev\DucksFootie\DucksFootie.DataAccess\bin\Debug\Common.pdb
 C:\Users\jason.smith\Documents\Personal\Dev\DucksFootie\DucksFootie.DataAccess\bin\Debug\DucksFootie.Entities.pdb
 C:\Users\jason.smith\Documents\Personal\Dev\DucksFootie\DucksFootie.DataAccess\obj\Debug\DucksFootie.DataAccess.csprojResolveAssemblyReference.cache
 C:\Users\jason.smith\Documents\Personal\Dev\DucksFootie\DucksFootie.DataAccess\obj\Debug\DucksFootie.DataAccess.dll
 C:\Users\jason.smith\Documents\Personal\Dev\DucksFootie\DucksFootie.DataAccess\obj\Debug\DucksFootie.DataAccess.pdb
-C:\Users\jason.smith\Documents\Personal\Dev\DucksFootie\DucksFootie.DataAccess\bin\Debug\Common.dll
-C:\Users\jason.smith\Documents\Personal\Dev\DucksFootie\DucksFootie.DataAccess\bin\Debug\Common.pdb
